@@ -1,5 +1,5 @@
 class UserProfilesController < ApplicationController
-  before_action :check_for_existing_profile, only: [:create]
+  # before_action :check_for_existing_profile, only: [:create]
   before_action :set_param, only: [:show, :update, :destroy]
   
   def show
@@ -7,19 +7,22 @@ class UserProfilesController < ApplicationController
   end
   
   def create
+    byebug
     profile = @current_user.build_user_profile(user_profile_param)
     if profile.save 
-      render json: profile 
+      render json: profile, status: 200
     else
-      render json: profile.errors.full_messages
+      byebug
+      render json: profile.errors.full_messages, status: 422
     end 
   end
   
   def update
+    byebug
     if @user_profile.update(user_profile_param)
-      render json: @user_profile
+      render json: @user_profile, status: 200
     else
-      render json: { errors: @user_profile.full_messages}
+      render json: @user_profile.errors.full_messages, status: 422
     end
   end
   
@@ -45,6 +48,7 @@ class UserProfilesController < ApplicationController
 
   private
   def set_param
+    byebug
     @user_profile=@current_user.user_profile
     if @user_profile.nil?
       render json: "User not create profile"

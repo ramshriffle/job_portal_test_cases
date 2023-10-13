@@ -18,6 +18,7 @@ class UsersApplicationController < ApplicationController
   end
   
   def destroy
+    byebug
     if @user_application.destroy
       render json: {message: "Application withdraw successfully"}
     else

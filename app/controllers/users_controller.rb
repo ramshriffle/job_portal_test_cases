@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_request, only: [:create, :login]
   
   def login
+    # debugger
     user = User.find_by_email(params[:email])
     if user&.authenticate(params[:password])
       token = jwt_encode(user_id: user.id)
@@ -12,29 +13,34 @@ class UsersController < ApplicationController
   end
 
   def index
+    # debugger
     @users = User.all
-    # render json: @users
+    render json: @users
   end
 
   def show
+    byebug
     render json: @current_user
   end
   
   def create
-    @user = User.new(user_params)
-    if @user.save  
-      UserMailer.with(user: @user).welcome_email.deliver_now  
-      render json: { message:"User Created!!!", data: @user }
+    debugger
+    user = User.new(user_params)
+    if user.save  
+      # UserMailer.with(user: @user).welcome_email.deliver_now  
+      render json: user, status: 201
     else
-      render json: @user.errors.full_messages
+      render json: user.errors.full_messages,status: 422
     end
   end
   
   def update
+    # debugger
     if @current_user.update(user_params)
-      render json: @current_user
+      render json: @current_user,status: 200
     else
-      render json: { errors: @current_user.errors.full_messages }
+      debugger
+      render json: @current_user.errors.full_messages,status: 422
     end
   end
   
@@ -42,7 +48,7 @@ class UsersController < ApplicationController
     if @current_user.destroy
       render json: { message: 'User deleted successfully' }
     else
-      render json: { errors: @current_user.errors.full_messages }
+      render json: @current_user.errors.full_messages, status: 400
     end
   end
   

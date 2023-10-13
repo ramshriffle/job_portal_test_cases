@@ -36,7 +36,5 @@ RSpec.describe UserProfile, type: :model do
    it "is invalid without skills" do 
     subject.skills = nil
      expect(subject).to_not be_valid
-   end
-
-   
+   end 
 end

@@ -1,25 +1,123 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/hp/Pictures/job_portal_test_case/app/models/job.rb": {
+      "/home/hp/Pictures/job_portal_test_case/app/controllers/concerns/json_web_token.rb": {
         "lines": [
           1,
-          1,
-          1,
           null,
           1,
           1,
           null,
+          1,
+          5,
+          5,
           null,
           null,
+          1,
+          9,
+          5,
           null,
           null
         ]
       },
-      "/home/hp/Pictures/job_portal_test_case/app/models/application_record.rb": {
+      "/home/hp/Pictures/job_portal_test_case/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
+          null,
+          1,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          2,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          4,
+          null,
+          null
+        ]
+      },
+      "/home/hp/Pictures/job_portal_test_case/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          7,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          9,
+          9,
+          9,
+          5,
+          4,
+          4,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
           null
         ]
       },
@@ -58,114 +156,68 @@
           null
         ]
       },
-      "/home/hp/Pictures/job_portal_test_case/app/controllers/jobs_controller.rb": {
+      "/home/hp/Pictures/job_portal_test_case/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/hp/Pictures/job_portal_test_case/app/models/job_seeker.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/hp/Pictures/job_portal_test_case/app/models/job_recruiter.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/hp/Pictures/job_portal_test_case/app/serializers/user_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/hp/Pictures/job_portal_test_case/app/models/user_profile.rb": {
         "lines": [
           1,
           1,
           1,
           null,
           1,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
           1,
-          0,
-          null,
-          null,
+          null
+        ]
+      },
+      "/home/hp/Pictures/job_portal_test_case/app/models/job.rb": {
+        "lines": [
           1,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
           1,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
           1,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
           null,
           1,
           1,
-          0,
           null,
           null,
-          1,
-          1,
-          0,
-          0,
-          0,
           null,
           null,
           null
         ]
       },
-      "/home/hp/Pictures/job_portal_test_case/app/controllers/application_controller.rb": {
+      "/home/hp/Pictures/job_portal_test_case/app/models/user_application.rb": {
         "lines": [
           1,
           1,
           1,
           1,
-          0,
-          null,
           null,
           1,
           1,
-          null,
-          1,
-          1,
-          1,
-          0,
-          1,
-          1,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/hp/Pictures/job_portal_test_case/app/controllers/concerns/json_web_token.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          1,
-          0,
           null,
           null
         ]
@@ -286,6 +338,68 @@
         "branches": {
         }
       },
+      "/home/hp/Pictures/job_portal_test_case/app/controllers/jobs_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/home/hp/Pictures/job_portal_test_case/app/controllers/passwords_controller.rb": {
         "lines": [
           0,
@@ -325,7 +439,7 @@
       "/home/hp/Pictures/job_portal_test_case/app/controllers/user_profiles_controller.rb": {
         "lines": [
           0,
-          0,
+          null,
           0,
           null,
           0,
@@ -335,12 +449,6 @@
           0,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
           0,
           0,
           0,
@@ -356,6 +464,15 @@
           0,
           0,
           0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           0,
           0,
@@ -369,6 +486,7 @@
           0,
           0,
           null,
+          0,
           0,
           0,
           0,
@@ -409,53 +527,8 @@
           0,
           0,
           0,
-          null,
-          0,
-          0,
-          0,
           0,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/hp/Pictures/job_portal_test_case/app/controllers/users_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
           0,
           0,
           0,
@@ -464,19 +537,6 @@
           0,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
           0,
           0,
           0,
@@ -568,59 +628,15 @@
         "branches": {
         }
       },
-      "/home/hp/Pictures/job_portal_test_case/app/models/job_recruiter.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/hp/Pictures/job_portal_test_case/app/models/job_seeker.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/hp/Pictures/job_portal_test_case/app/models/user_application.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/hp/Pictures/job_portal_test_case/app/models/user_profile.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/home/hp/Pictures/job_portal_test_case/app/serializers/job_serializer.rb": {
         "lines": [
           0,
           0,
           null,
           null,
-          0,
-          0,
-          0,
+          null,
+          null,
+          null,
           0
         ],
         "branches": {
@@ -656,18 +672,8 @@
         ],
         "branches": {
         }
-      },
-      "/home/hp/Pictures/job_portal_test_case/app/serializers/user_serializer.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1696945875
+    "timestamp": 1697204659
   }
 }

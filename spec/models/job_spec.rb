@@ -1,12 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Job, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
-
-  describe "Associations" do
-    it { should belong_to(:user) }
-  end
-
   subject{
     FactoryBot.create(:job)
   }
@@ -28,5 +22,9 @@ RSpec.describe Job, type: :model do
   it "is invalid without salary" do
     subject.salary = nil
     expect(subject).to_not be_valid
+  end
+
+  describe "Associations" do
+    it { should belong_to(:user) }
   end
 end

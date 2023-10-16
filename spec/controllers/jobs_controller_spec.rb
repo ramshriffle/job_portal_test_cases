@@ -18,7 +18,6 @@ RSpec.describe JobsController, type: :controller do
     context 'without token' do
       let(:bearer_token) { '' }
       it "return unauthorized" do
-        byebug
         expect(subject).to have_http_status(401)
         expect(JSON.parse(subject.body)).to eq({"error"=>"Invalid token"})
       end
@@ -26,7 +25,6 @@ RSpec.describe JobsController, type: :controller do
     context 'with token' do
       context 'with valid token' do
         it 'returns all the jobs' do
-          byebug
           expect(subject).to have_http_status(200)
         end
       end
@@ -34,7 +32,6 @@ RSpec.describe JobsController, type: :controller do
       context 'with invalid token' do
         let(:bearer_token) { 'dh92' }
         it 'return unauthorized' do
-          debugger
           expect(subject).to have_http_status(401)
         end
       end
@@ -53,14 +50,12 @@ RSpec.describe JobsController, type: :controller do
       context 'with valid parmas' do
         let(:params) { {job_title:job.job_title, description:job.description, location:job.location, salary:job.salary} }
         it 'retrurn created new job' do
-          byebug
           expect(subject).to have_http_status(200)
         end
       end
 
       context 'with invalid parmas' do
         it 'return unprocessable entity ' do
-          byebug
           expect(subject).to have_http_status(422)
         end
       end
@@ -69,7 +64,6 @@ RSpec.describe JobsController, type: :controller do
     context 'without token' do
       let(:bearer_token) { '' }
       it 'unauthorized' do
-        byebug
         expect(subject).to have_http_status(401)
         expect(JSON.parse(subject.body)).to eq("error"=>"Invalid token")
       end
@@ -86,7 +80,6 @@ RSpec.describe JobsController, type: :controller do
     context 'with token' do
       context 'with valid token' do
         it 'returns job' do
-          byebug
           expect(subject).to have_http_status(200)
         end
       end
@@ -94,7 +87,6 @@ RSpec.describe JobsController, type: :controller do
       context 'with invalid token' do
         let(:bearer_token) { 'dh92' }
         it 'return unauthorized' do
-          byebug
           expect(subject).to have_http_status(401)
         end
       end
@@ -103,7 +95,6 @@ RSpec.describe JobsController, type: :controller do
     context 'without token' do
       let(:bearer_token) { '' }
       it "return unauthorized" do
-        byebug
         expect(subject).to have_http_status(401)
         expect(JSON.parse(subject.body)).to eq({"error"=>"Invalid token"})
       end
@@ -126,9 +117,8 @@ RSpec.describe JobsController, type: :controller do
       end
 
       context 'with invalid parmas' do
-        let(:params) { {job_title:'',location:'', salary:20000, id: job.id} }
+        let(:params) { {job_title:'',location:'', id: job.id} }
         it 'return unprocessable entity ' do
-          byebug
           expect(subject).to have_http_status(422)
         end
       end
@@ -137,7 +127,6 @@ RSpec.describe JobsController, type: :controller do
     context 'without token' do
       let(:bearer_token) { '' }
       it 'unauthorized' do
-        byebug
         expect(subject).to have_http_status(401)
         expect(JSON.parse(subject.body)).to eq("error"=>"Invalid token")
       end
@@ -154,7 +143,6 @@ RSpec.describe JobsController, type: :controller do
     context 'with token' do
       context 'with valid job' do
         it 'job deleted successfully' do
-          byebug
           expect(subject).to have_http_status(200)
           # expect(subject.body).to 
         end
@@ -164,7 +152,6 @@ RSpec.describe JobsController, type: :controller do
     context 'without token' do
       let(:bearer_token) { '' }
       it 'unauthorized' do
-        byebug
         expect(subject).to have_http_status(401)
         expect(JSON.parse(subject.body)).to eq("error"=>"Invalid token")
       end

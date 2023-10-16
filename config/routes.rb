@@ -9,10 +9,6 @@ Rails.application.routes.draw do
   resource :user_profiles
   resources :jobs
   resources :users_application
-
-  resources :job_seekers, only: [:index] do
-    get 'view_all_jobs', on: :collection
-  end
     
   resources :job_recruiters do
     member do

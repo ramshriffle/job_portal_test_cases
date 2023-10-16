@@ -31,7 +31,6 @@ RSpec.describe UsersController, type: :controller do
       context 'with invalid token' do
         let(:bearer_token) { 'dh92' }
         it 'return unauthorized' do
-          debugger
           expect(subject).to have_http_status(401)
         end
       end
@@ -47,22 +46,23 @@ RSpec.describe UsersController, type: :controller do
     context 'create user' do
       context 'with valid params' do
         it 'create new user' do
-          # byebug
+          byebug
           expect(subject).to have_http_status(201)
+          expect(JSON.parse(subject.body)).to eq("id"=>user.id, "user_name"=>user.user_name, "email"=>user.email, "type"=>user.type)
         end
       end
       context 'with invalid params' do
         let(:params) { {} }
         it 'returns not_found' do
-          # debugger
+          debugger
           expect(subject).to have_http_status(422)
+          expect(JSON.parse(subject.body)).to eq("Password can't be blank", "User name can't be blank", "Email can't be blank", "Type can't be blank", "Email Please Enter Valid Email")
         end
       end
     end
   end
   
   describe 'PUT update' do
-    let(:params) { {}}
     subject do
       request.headers["Authorization"] = bearer_token
       put :update, params: params
@@ -75,30 +75,32 @@ RSpec.describe UsersController, type: :controller do
           it 'returns updated the users' do
             byebug
             expect(subject).to have_http_status(200)
+            expect(JSON.parse(subject.body)).to eq("id"=>41, "user_name"=>"its_ram", "email"=>"ramkush@gmail.com", "type"=>"JobSeeker")
           end
         end
         
         context 'invalid params' do
-          let(:params) {{id: user.id, user_name:'', email:'' }}
+          let(:params) {{id: user.id, user_name:''}}
           it 'unprocessable entity' do
+            debugger
             expect(subject).to have_http_status(422)
+            expect(JSON.parse(subject.body)).to eq("error"=>["User name can't be blank"])
           end
         end
       end
-
-      # context 'invalid token' do
-      #   it 'return unauthorized' do
-      #   end
-      # end
     end
     
-    # context 'without token' do
-    #   let(:bearer_token) { {} }
-    #   it "return unauthorized" do
-    #     debugger
-    #     expect(response).to have_http_status(401)
-    #   end
-    # end
+    
+
+    context 'without token' do
+      let(:params) { {id: user.id} }
+      let(:bearer_token) { ''}
+      it "return unauthorized" do
+        debugger
+        expect(subject).to have_http_status(401)
+        expect(JSON.parse(subject.body)).to eq("error"=>"Invalid token")
+      end
+    end
   end
 
   describe 'Delete destroy' do 
@@ -111,9 +113,9 @@ RSpec.describe UsersController, type: :controller do
     context 'with token' do
       context 'with valid job' do
         it 'user deleted successfully' do
-          byebug
+          user.save
           expect(subject).to have_http_status(200)
-          # expect(subject.body).to 
+          expect(subject).to change(User, :count).from(1).to(0)
         end
       end
     end
@@ -121,8 +123,7 @@ RSpec.describe UsersController, type: :controller do
     context 'without token' do
       let(:bearer_token) { '' }
       it 'unauthorized' do
-        user.save
-        byebug
+        # debugger
         expect(subject).to have_http_status(401)
         expect(JSON.parse(subject.body)).to eq("error"=>"Invalid token")
       end

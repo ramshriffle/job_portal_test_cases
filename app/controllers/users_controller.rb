@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    debugger
+    byebug
     user = User.new(user_params)
     if user.save  
       # UserMailer.with(user: @user).welcome_email.deliver_now  
@@ -35,12 +35,13 @@ class UsersController < ApplicationController
   end
   
   def update
-    # debugger
+    debugger
     if @current_user.update(user_params)
       render json: @current_user,status: 200
     else
       debugger
-      render json: @current_user.errors.full_messages,status: 422
+      render json: { error: @current_user.errors.full_messages },status: 422
+      
     end
   end
   

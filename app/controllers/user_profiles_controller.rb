@@ -39,12 +39,12 @@ class UserProfilesController < ApplicationController
     params.permit(:f_name, :l_name, :skills, :experience, :education, :image)
   end
   
-  private
-  def check_for_existing_profile
-    unless @current_user.user_profile.nil?
-      render json: 'You have already created profile'
-    end
-  end
+  # private
+  # def check_for_existing_profile
+  #   unless @current_user.user_profile.nil?
+  #     render json: 'You have already created profile'
+  #   end
+  # end
 
   private
   def set_param

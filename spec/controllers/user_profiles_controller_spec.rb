@@ -20,7 +20,6 @@ RSpec.describe UserProfilesController, type: :controller do
     context 'with token' do
       context 'with valid token' do
         it 'returns profile of user' do
-          byebug
           # user_profile.save
           expect(subject).to have_http_status(200)
         end
@@ -29,7 +28,6 @@ RSpec.describe UserProfilesController, type: :controller do
       context 'with invalid token' do
         let(:bearer_token) { 'dh92' }
         it 'return unauthorized' do
-          byebug
           expect(subject).to have_http_status(401)
         end
       end
@@ -38,7 +36,6 @@ RSpec.describe UserProfilesController, type: :controller do
     context 'without token' do
       let(:bearer_token) { '' }
       it "return unauthorized" do
-        byebug
         expect(subject).to have_http_status(401)
         expect(JSON.parse(subject.body)).to eq({"error"=>"Invalid token"})
       end
@@ -89,7 +86,6 @@ RSpec.describe UserProfilesController, type: :controller do
     context 'with token' do
       context 'with valid parmas' do
         it 'retrurn updated profile' do
-          byebug
           expect(subject).to have_http_status(200)
         end
       end
@@ -97,7 +93,6 @@ RSpec.describe UserProfilesController, type: :controller do
       context 'with invalid parmas' do
         let(:params) { {f_name:'',l_name:'', experience:'',id: user_profile.id} }
         it 'return unprocessable entity ' do
-          byebug
           expect(subject).to have_http_status(422)
         end
       end
@@ -106,7 +101,6 @@ RSpec.describe UserProfilesController, type: :controller do
     context 'without token' do
       let(:bearer_token) { '' }
       it 'unauthorized' do
-        byebug
         expect(subject).to have_http_status(401)
         expect(JSON.parse(subject.body)).to eq("error"=>"Invalid token")
       end
@@ -123,7 +117,6 @@ RSpec.describe UserProfilesController, type: :controller do
     context 'with token' do
       context 'with valid user' do
         it 'profile deleted successfully' do
-          byebug
           expect(subject).to have_http_status(200)
           # expect(user_profile).to be_empty()
         end
@@ -133,7 +126,6 @@ RSpec.describe UserProfilesController, type: :controller do
     context 'without token' do
       let(:bearer_token) { '' }
       it 'unauthorized' do
-        byebug
         expect(subject).to have_http_status(401)
         expect(JSON.parse(subject.body)).to eq("error"=>"Invalid token")
       end
